@@ -8,19 +8,6 @@ const { Meta } = Card;
 
 
 
-
-
-function PokemonList
-
-
-
-
-
-
-
-
-
-/*
 export class PokemonList extends Component {
 
     constructor(props) {
@@ -33,7 +20,7 @@ export class PokemonList extends Component {
 
 
     componentDidMount() {
-        axios.get('https://api.pokemontcg.io/v1/cards?subtype=stage%202')
+        axios.get('https://api.pokemontcg.io/v1/cards?subtype=Basic')
             .then(res => {
                 console.log(res)
                 this.setState({ pokemons: res.data.cards })
@@ -45,42 +32,23 @@ export class PokemonList extends Component {
     }
 
     render() {
-        const { pokemons, errorMsg  } = this.state
+        const { pokemons, errorMsg } = this.state
         return (
-            <div>
             <Row gutter={16, 16}>
-                { pokemons.length ?
-                pokemons.map(pokemon => {
+                { pokemons.map(algo => {
                     return (
                         <Col span={8}>
-                            < Card
+                            < Card>
                                 hoverable
-                                cover={<img alt="pokémon" src={this.state.pokemon.imageUrl} />} >
-                                <Meta title={this.state.pokemon.name} description={this.state.pokemon.state} /> 
-                                
+                                    cover={<img alt="pokémon" src={algo.imageUrl} />}
+
                             </Card>
                         </Col>
                     )
-                }) : null }
-                 {
-                      errorMsg ? <div>{errorMsg} </div> : null 
-                  }
+                }  ) }
+
             </Row>
-            </div>
-        )
-    }
 
-    /*
-                  Lista de Pokémons  
-                  {
-                      pokemons.length ?
-                  pokemons.map( pokemon => <div key = {pokemon.id}> {pokemon.name} {pokemon.imageUrl}</div> ) : 
-                      null
-                  }
-                  {
-                      errorMsg ? <div>{errorMsg} </div> : null 
-                  }
-          
         )
     }
 }
@@ -91,25 +59,6 @@ export class PokemonList extends Component {
 
 
 
-
-render () {
-    const { pokemons, errorMsg } = this.state
-    return ( 
-        <div>
-            
-              Lista de Pokémons  
-              {
-                  pokemons.length ?
-              pokemons.map( pokemon => <div key = {pokemon.id}> {pokemon.name} {pokemon.imageUrl}</div> ) : 
-                  null
-              }
-              {
-                  errorMsg ? <div>{errorMsg} </div> : null 
-              }
-        </div>
-    )
-}
-}  */
 
 
 export default PokemonList 
