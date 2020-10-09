@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import "antd/dist/antd.css";
-import { Layout, Menu} from 'antd';
-import PokemonList from './Components/PokemonList';
+import { Layout, Menu, Divider} from 'antd';
+import PokemonBaseList from './Components/PokemonBaseList';
+import Pokemon1List from './Components/Pokemon1List';
 
 
 const { Header, Content, Footer } = Layout;
@@ -11,7 +12,7 @@ function App() {
     <Layout>
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%', background : 'white' }}>
       <div className="logo" style = {{ }}/>
-      <Menu theme="light" mode="horizontal" defaultSelectedKeys={['2']}>
+      <Menu theme="light" mode="horizontal" defaultSelectedKeys={['2']} style={{float: 'right'}}>
         <Menu.Item key="1">Home</Menu.Item>
         <Menu.Item key="2">Pokémons</Menu.Item>
 
@@ -20,10 +21,17 @@ function App() {
     <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
  
       <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-        <PokemonList />
+      <Divider orientation="left">Pokémons en su forma base </Divider>
+        <PokemonBaseList />
       </div>
+
+      <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
+      <Divider orientation="left">Pokémons en su primera evolución </Divider>
+        <Pokemon1List />
+      </div>
+      
     </Content>
-    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+    <Footer style={{ textAlign: 'center' }}> Pokémon </Footer>
   </Layout>
   );
 }

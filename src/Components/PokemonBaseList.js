@@ -8,7 +8,7 @@ const { Meta } = Card;
 
 
 
-export class PokemonList extends Component {
+export class PokemonBaseList extends Component {
 
     constructor(props) {
         super(props)
@@ -37,10 +37,11 @@ export class PokemonList extends Component {
             <Row gutter={16, 16}>
                 { pokemons.map(algo => {
                     return (
-                        <Col span={8}>
-                            < Card>
+                        <Col span={3}>
+                            <Card
                                 hoverable
-                                    cover={<img alt="pokémon" src={algo.imageUrl} />}
+                                    cover={<img alt="pokémon" src={algo.imageUrl} />} >
+                                        <Meta title={algo.name} description={algo.nationalPokedexNumber}> </Meta>
 
                             </Card>
                         </Col>
@@ -61,4 +62,4 @@ export class PokemonList extends Component {
 
 
 
-export default PokemonList 
+export default PokemonBaseList 
