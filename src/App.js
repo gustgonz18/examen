@@ -3,7 +3,7 @@ import './App.css';
 import "antd/dist/antd.css";
 import { Layout, Menu, Divider} from 'antd';
 import PokemonBaseList from './Components/PokemonBaseList';
-import Pokemon1List from './Components/Pokemon1List';
+
 
 
 const { Header, Content, Footer } = Layout;
@@ -24,12 +24,6 @@ function App() {
       <Divider orientation="left">Pokémons en su forma base </Divider>
         <PokemonBaseList />
       </div>
-
-      <div className="site-layout-background" style={{ padding: 24, minHeight: 380 }}>
-      <Divider orientation="left">Pokémons en su primera evolución </Divider>
-        <Pokemon1List />
-      </div>
-      
     </Content>
     <Footer style={{ textAlign: 'center' }}> Pokémon </Footer>
   </Layout>
