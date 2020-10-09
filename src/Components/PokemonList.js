@@ -1,8 +1,26 @@
 import React, { Component } from 'react'
+
 import axios from 'axios'
 import { Card, Col, Row } from 'antd';
 
 const { Meta } = Card;
+
+
+
+
+
+
+function PokemonList
+
+
+
+
+
+
+
+
+
+/*
 export class PokemonList extends Component {
 
     constructor(props) {
@@ -13,11 +31,12 @@ export class PokemonList extends Component {
         }
     }
 
+
     componentDidMount() {
         axios.get('https://api.pokemontcg.io/v1/cards?subtype=stage%202')
             .then(res => {
                 console.log(res)
-                this.setState({ pokemons: res.data })
+                this.setState({ pokemons: res.data.cards })
             })
             .catch(err => {
                 console.log(err)
@@ -26,8 +45,9 @@ export class PokemonList extends Component {
     }
 
     render() {
-        const { pokemons, errorMsg } = this.state
+        const { pokemons, errorMsg  } = this.state
         return (
+            <div>
             <Row gutter={16, 16}>
                 { pokemons.length ?
                 pokemons.map(pokemon => {
@@ -35,15 +55,18 @@ export class PokemonList extends Component {
                         <Col span={8}>
                             < Card
                                 hoverable
-                                cover={<img alt="pokémon" src={pokemon.imageUrl} />} >
-                                <Meta title={pokemon.name} description={pokemon.state} /> : 
+                                cover={<img alt="pokémon" src={this.state.pokemon.imageUrl} />} >
+                                <Meta title={this.state.pokemon.name} description={this.state.pokemon.state} /> 
                                 
-
                             </Card>
                         </Col>
                     )
                 }) : null }
+                 {
+                      errorMsg ? <div>{errorMsg} </div> : null 
+                  }
             </Row>
+            </div>
         )
     }
 
@@ -86,7 +109,7 @@ render () {
         </div>
     )
 }
-}  */}
+}  */
 
 
 export default PokemonList 
